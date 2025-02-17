@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Book Store</title>
+    <link rel="stylesheet" href="Home style.css">
+    <script>
+        // Redirect to Books page with search query
+        function searchBooks() {
+            let query = document.getElementById("searchInput").value;
+            window.location.href = "Books.html?search=" + encodeURIComponent(query);
+        }
+
+        // Scroll New Arrivals
+        function scrollBooks(direction) {
+            let container = document.getElementById("newArrivals");
+            container.scrollLeft += direction * 300;
+        }
+
+        // Toggle "View More" description
+        function toggleDescription(id) {
+            let desc = document.getElementById(id);
+            desc.style.display = (desc.style.display === "none" || desc.style.display === "") ? "block" : "none";
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <img class="navbar-brand" src="Media/logo.png" alt="Logo" width="60" height="60">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="Books.html">Books</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Century Books.html">Century Books</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Delivery.html">Delivery</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Bar Section -->
+    <section class="search-section">
+        <p><img src="Media/logoalt.png" alt="" width="200" height="200"> <br>Welcome to T_Emblemy <br> Use the search bar to find specific books
+        </p>
+        <input type="text" id="searchInput" placeholder="Search for books...">
+        <button onclick="searchBooks()">Search</button>
+    </section>
+
+    <!-- Video & Paragraph Section -->
+    <section class="video-text-section">
+        <div class="text-content">
+            <h2>About Our Collection</h2>
+            <p>Explore a wide range of books, from timeless classics to the latest releases. Our bookstore offers a variety of genres to suit every reader's preference. Dive into stories that inspire, educate, and entertain.</p>
+        </div>
+        <div class="video-content">
+            <video controls>
+                <source src="Media/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="new-arrivals">
+        <h2>New Arrivals</h2>
+        <button class="scroll-btn left" onclick="scrollBooks(-1)">&#10094;</button>
+        <div class="book-container" id="newArrivals">
+            <div class="book">
+                <img src="Media/book1.jpg" alt="Book 1">
+                <p>It End With Us</p>
+                <button onclick="toggleDescription('desc1')">View More</button>
+                <p class="description" id="desc1" style="display: none;">A romance novel by Colleen Hoover about a young woman named Lily Bloom who falls in love with an abusive neurosurgeon named Ryle Kincaid.</p>
+            </div>
+            <div class="book">
+                <img src="Media/book2.jpg" alt="Book 2">
+                <p>Harry Potter and the Philosopher's Stone</p>
+                <button onclick="toggleDescription('desc2')">View More</button>
+                <p class="description" id="desc2" style="display: none;">The main story arc concerns Harry's conflict with Lord Voldemort, a dark wizard who intends to become immortal, overthrow the wizard governing body known as the Ministry of Magic, and subjugate all wizards and Muggles (non-magical people).</p>
+            </div>
+            <div class="book">
+                <img src="Media/book3.jpg" alt="Book 3">
+                <p>Dating and Dragons</p>
+                <button onclick="toggleDescription('desc3')">View More</button>
+                <p class="description" id="desc3" style="display: none;">Dating and Dragons is a young adult novel by Kristy Boyce about a high schooler who joins a Dungeons & Dragons (D&D) group to make friends.</p>
+            </div>
+            <div class="book">
+                <img src="Media/book4.jpg" alt="Book 4">
+                <p>Chainsaw Man</p>
+                <button onclick="toggleDescription('desc4')">View More</button>
+                <p class="description" id="desc4" style="display: none;">After being killed on a job, he is revived by his pet devil Pochita and becomes something new and dangerous, Chainsaw Man!.</p>
+            </div>
+        </div>
+        <button class="scroll-btn right" onclick="scrollBooks(1)">&#10095;</button>
+    </section>
+    <footer>
+        <div class="footer-container">
+          <!-- About Us Section -->
+          <div class="about-us">
+            <h3>About Us</h3>
+            <p>
+              _T_Emblemy Collectible Books has been selling rare, used classic fiction
+              from its store in Mayfair for 40 years.
+            </p>
+          </div>
+          
+          <!-- Contact Section -->
+          <div class="contact-info">
+            <h3>LEGAL</h3>
+            <p><a href="">Privacy Policy</a></p>
+            <p><a href="">Cookie Policy</a></p>
+            <p><a href="">Terms & conditions</a></p>
+          </div>
+        </div>
+      </footer>
+      
+      
+
+</body>
+</html>

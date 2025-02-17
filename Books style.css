@@ -1,0 +1,203 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #f2dede;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background: #333;
+  padding: 10px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content Layout */
+.main-content {
+  display: flex;
+  margin: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 400px;
+  background: #444;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 8px;
+  cursor: pointer;
+  text-align: center;
+  background: #555;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.sidebar ul li:hover {
+  background: #666;
+}
+
+/* Book Grid */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 10px;
+  flex-grow: 1;
+}
+.subtitle{
+  text-align: center;
+  border: outset white 5px;
+  color: #2C2C2C;;
+}
+.book {
+  background: #2C2C2C;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+/* Zoom effect */
+.book-image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.book-image:hover {
+  transform: scale(1.1);
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-image {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+
+/* Grid layout for Best Sellers and Latest Releases (1x3) */
+.col {
+  padding: 15px;
+}
+.grid-1x3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px;
+}
+
+/* Grid layout for All Books (4x4) */
+.grid-4x4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px;
+}
+
+.book {
+  background-color: #030a1e;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.book-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.book-description {
+  padding-top: 10px;
+  color: #ffffff;
+}
+.price {
+  font-size: 1.2em;
+  color: #ffffff;
+  margin: 10px 0;
+}
+
+.buy-btn, .view-btn {
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.buy-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.view-btn {
+  background-color: #008CBA;
+  color: white;
+}
+
+.buy-btn:hover {
+  background-color: #45a049;
+}
+
+.view-btn:hover {
+  background-color: #005f6b;
+}
